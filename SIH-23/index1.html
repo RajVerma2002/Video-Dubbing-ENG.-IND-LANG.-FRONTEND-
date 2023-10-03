@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper Publication Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+
+    <style>
+        
+    /* Floating WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #089284;
+            color: #fff;
+            padding: 12px 12px;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #052b27;
+            transform: scale(1.1);
+        }
+
+        /* our team style */
+        .team-slider {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .team-member {
+            width: 150px;
+            padding: 0 15px;
+            transition: transform 0.3s, z-index 0.3s, width 0.3s;
+        }
+
+        .team-member-inner {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .team-slider:hover .team-member {
+            transform: scale(0.8);
+            z-index: 0;
+            width: 110px;
+        }
+
+        .team-slider:hover .team-member-inner {
+            transform: scale(1.1);
+        }
+
+        .team-slider .slick-center {
+            z-index: 1;
+        }
+
+        /* Slick Carousel Default Styles */
+        .slick-slider {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .slick-list {
+            margin: 0 -15px;
+        }
+
+        .slick-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-gray-100">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        // Initialize Slick Carousel
+        // Initialize Slick Carousel
+        $(document).ready(function () {
+            $('.team-slider').slick({
+                slidesToShow: 3,
+                centerMode: true, // Enables center mode
+                centerPadding: '0',
+                focusOnSelect: true,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+
+    </script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://api.whatsapp.com/send?phone=916290089605" target="_blank" class="whatsapp-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" style="color: #05f8db"
+            viewBox="0 0 24 24">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+    </a>
+    
+    <!-- Navigation -->
+    <nav class="bg-gray-900 px-5 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="logoDN.png" alt="Logo" class="w-20 h-20 mr-2">
+                <a href="#" class="text-white text-xl font-bold">MedCare Research Hub</a>
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="https://illaudable-rhythm.000webhostapp.com" class="text-white hover:text-gray-300">Home</a></li>
+                <li><a href="https://illaudable-rhythm.000webhostapp.com" class="text-white hover:text-gray-300">Use Cases</a></li>
+                <li><a href="https://illaudable-rhythm.000webhostapp.com/submission.html" class="text-white hover:text-gray-300">Help</a></li>
+                <li><a href="https://illaudable-rhythm.000webhostapp.com/Contact_Us.html" class="text-white hover:text-gray-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-900 to-blue-600 text-white px-7 py-7">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold mb-4">Welcome to the Future of Multilingual Entertainment!</h1>
+            <p class="text-lg mb-8">Unlocking Multilingual Expression: Your Stories, Our Voices.</p>
+            <a href="#"
+                class="bg-white text-blue-600 px-6 py-3 rounded-full hover:bg-blue-100 transition duration-300">Get Started
+            </a>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="bg-gradient-to-b from-blue-600 to-purple-600 px-7 py-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-2xl text-white font-bold mb-6">Search Our Featured Services</h2>
+            <div class="mx-auto max-w-md">
+                <div class="relative rounded-full shadow-md">
+                    <input type="text"
+                        class="w-full py-3 px-7 pr-10 leading-tight rounded-full border border-gray-300 focus:outline-none focus:border-blue-500"
+                        placeholder="Search services...">
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                        <!-- Search Icon (Tailwind Version) -->
+                        <button>
+                            <svg class="h-5 w-5 text-gray-500" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M22 22L15.5 15.5M12 6a6 6 0 100 12 6 6 0 000-12z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submission Section -->
+    <section class="px-7 py-16 bg-gradient-to-b from-purple-600 to-gray-200 text-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Submit Your Paper</h2>
+            <p class="text-lg mb-8">Share your research with the global academic community.</p>
+            <a href="https://illaudable-rhythm.000webhostapp.com/submission.html"
+                class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-10 py-3 rounded-full font-semibold shadow-lg transition duration-300">Submit
+                Now</a>
+        </div>
+    </section>
+
+
+    <!-- Additional Points Section -->
+    <section class="px-7 py-16 bg-gradient-to-b from-gray-200 to-green-500">
+        <div class="container mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-6">Additional Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Search Feature -->
+                <div class="p-4 border rounded-lg shadow-md shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">Search Functionality</h3>
+                    <p class="text-gray-700">Search by Paper ID, Published Paper ID, Paper Name, Author Name, and Paper
+                        Title.</p>
+                    <button
+                        class="bg-blue-500 text-white px-7 py-2 mt-4 rounded-full hover:bg-blue-600 transition duration-300">Explore</button>
+                </div>
+                <!-- Policy Features -->
+                <div class="p-4 border rounded-lg shadow-md shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">Policy Section</h3>
+                    <ul class="text-gray-700">
+                        <li>Review Process Policy</li>
+                        <li>Open Access Publishing Policy</li>
+                        <li>Publication Ethics Policy</li>
+                    </ul>
+                    <button
+                        class="bg-green-500 text-white px-7 py-2 mt-4 rounded-full hover:bg-green-600 transition duration-300">Learn
+                        More</button>
+                </div>
+                <!-- User Features -->
+                <div class="p-4 border rounded-lg shadow-md shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">User Interaction</h3>
+                    <ul class="text-gray-700">
+                        <li>Track Status of Paper</li>
+                        <li>Login to Author Home</li>
+                        <li>Call For Paper - Current Issue August 2023</li>
+                    </ul>
+                    <button
+                        class="bg-purple-500 text-white px-7 py-2 mt-4 rounded-full hover:bg-purple-600 transition duration-300">Check
+                        Now</button>
+                </div>
+                <!-- Submission and Payment -->
+                <div class="p-4 border rounded-lg shadow-md shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">Paper Submission</h3>
+                    <ul class="text-gray-700">
+                        <li>Submit Paper Online</li>
+                        <li>Submit Word File of Paper</li>
+                        <li>Online Payment Link</li>
+                    </ul>
+                    <button
+                        class="bg-green-900 text-white px-7 py-2 mt-4 rounded-full hover:bg-orange-600 transition duration-300">Submit
+                        Paper</button>
+                </div>
+                <!-- Guidelines -->
+                <div class="p-4 border rounded-lg shadow-md shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">Publication Guidelines</h3>
+                    <p class="text-gray-700">Guidelines for paper submission and publication.</p>
+                    <button
+                        class="bg-pink-700 text-white px-7 py-2 mt-4 rounded-full hover:bg-pink-600 transition duration-300">Read
+                        Guidelines</button>
+                </div>
+                <!-- Reviewer and RMS -->
+                <div class="p-4 border rounded-lg shadow-md shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">Reviewer and RMS</h3>
+                    <p class="text-gray-700">Join as a reviewer and earn 300 INR.</p>
+                    <button
+                        class="bg-red-500 text-white px-7 py-2 mt-4 rounded-full hover:bg-red-600 transition duration-300">Become
+                        a Reviewer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section class="px-7 py-16 bg-gradient-to-b from-green-500 to-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Forms / Downloads</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sample Paper Format -->
+                <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Sample Paper Format</h3>
+                    <p class="text-gray-700 mb-4">Download the sample paper format for your submissions.</p>
+                    <a href="#" class="text-blue-500 hover:underline">Download</a>
+                </div>
+                <!-- CopyRight Transfer Form -->
+                <div class="p-6 border border-green-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">CopyRight Transfer Form</h3>
+                    <p class="text-gray-700 mb-4">Download the form to transfer copyright for your paper.</p>
+                    <a href="#" class="text-green-500 hover:underline">Download</a>
+                </div>
+                <!-- Undertaking Form -->
+                <div class="p-6 border border-purple-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Author Consent Form</h3>
+                    <p class="text-gray-700 mb-4">Download the undertaking form for your submission.</p>
+                    <a href="#" class="text-purple-500 hover:underline">Download</a>
+                </div>
+                <!-- Add more forms here -->
+                <!-- Form 4 -->
+                <div class="p-6 border border-yellow-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Copyright Transfer Form</h3>
+                    <p class="text-gray-700 mb-4">Description of Form 4.</p>
+                    <a href="#" class="text-yellow-500 hover:underline">Download</a>
+                </div>
+                <!-- Form 5 -->
+                <div class="p-6 border border-red-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Editorial Decision Form</h3>
+                    <p class="text-gray-700 mb-4">Description of Form 5.</p>
+                    <a href="#" class="text-red-500 hover:underline">Download</a>
+                </div>
+                <!-- Form 6 -->
+                <div class="p-6 border border-green-800 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Undertaking Form</h3>
+                    <p class="text-gray-700 mb-4">Description of Form 6.</p>
+                    <a href="#" class="text-orange-500 hover:underline">Download</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Categories Section -->
+    <section class="bg-gradient-to-b from-gray-100 to-red-300 px-7 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-6">Explore Paper Categories</h2>
+            <p class="text-gray-700 mb-8">Browse research papers by different subject areas.</p>
+            <ul class="flex flex-wrap justify-center space-x-4">
+                <li><a href="#" class="text-blue-500 hover:underline">Technology</a></li>
+                <li><a href="#" class="text-blue-500 hover:underline">Science</a></li>
+                <li><a href="#" class="text-blue-500 hover:underline">Social Sciences</a></li>
+                <li><a href="#" class="text-blue-500 hover:underline">Medicine</a></li>
+                <li><a href="#" class="text-blue-500 hover:underline">Arts</a></li>
+                <li><a href="#" class="text-blue-500 hover:underline">Business</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Call for Paper Section -->
+    <section class="bg-gradient-to-b from-red-300 to-blue-400 px-7 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-6">Call for Papers</h2>
+            <p class="text-gray-700 mb-8">Contribute to the advancement of knowledge by submitting your research papers.
+            </p>
+            <a href="#"
+                class="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300">Submit
+                Your Paper</a>
+        </div>
+    </section>
+
+    <!-- Authors Section -->
+    <section class="bg-gradient-to-b from-blue-400 to-gray-200 px-7 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-6">For Authors</h2>
+            <p class="text-gray-700 mb-8">Learn about the submission process, guidelines, and benefits of publishing
+                with us.</p>
+            <a href="#"
+                class="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300">Learn
+                More</a>
+        </div>
+    </section>
+
+    <!-- Publication Rules Section -->
+    <section class="bg-gradient-to-b from-gray-200 to-green-400 px-7 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-6">Publication Rules</h2>
+            <p class="text-gray-700 mb-8">Understand the rules and standards for submitting and publishing research
+                papers.</p>
+            <a href="#"
+                class="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300">View
+                Guidelines</a>
+        </div>
+    </section>
+
+    <!-- Sample Articles Section -->
+    <section class="px-7 py-16 bg-gradient-to-b from-green-400 to-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Explore Featured Research Articles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sample Article 1 -->
+                <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Advancements in Sustainable Energy</h3>
+                    <p class="text-gray-700 mb-4">Discover innovative solutions for a greener future.</p>
+                    <a href="#" class="text-blue-500 hover:underline">Read Article</a>
+                </div>
+                <!-- Sample Article 2 -->
+                <div class="p-6 border border-green-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">AI and Robotics Breakthroughs</h3>
+                    <p class="text-gray-700 mb-4">Unveiling the latest trends in AI and robotics.</p>
+                    <a href="#" class="text-green-500 hover:underline">Read Article</a>
+                </div>
+                <!-- Sample Article 3 -->
+                <div class="p-6 border border-purple-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Exploring Social Media Impact</h3>
+                    <p class="text-gray-700 mb-4">Analyzing effects of social media on individuals and communities.</p>
+                    <a href="#" class="text-purple-500 hover:underline">Read Article</a>
+                </div>
+                <!-- Sample Article 4 -->
+                <div class="p-6 border border-yellow-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Space Travel and Beyond</h3>
+                    <p class="text-gray-700 mb-4">Delving into possibilities of space exploration and travel.</p>
+                    <a href="#" class="text-yellow-500 hover:underline">Read Article</a>
+                </div>
+                <!-- Sample Article 5 -->
+                <div class="p-6 border border-red-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Innovations in Healthcare Tech</h3>
+                    <p class="text-gray-700 mb-4">Highlighting cutting-edge technologies in healthcare.</p>
+                    <a href="#" class="text-red-500 hover:underline">Read Article</a>
+                </div>
+                <!-- Sample Article 6 -->
+                <div class="p-6 border border-green-800 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Cultural Diversity in Literature</h3>
+                    <p class="text-gray-700 mb-4">Examining literature's celebration of cultural diversity.</p>
+                    <a href="#" class="text-orange-500 hover:underline">Read Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features Section -->
+<section class="bg-gradient-to-b from-white to-purple-600 px-7 py-16">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900">Why Choose MedCare Research Hub?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Point 1 -->
+            <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                <h3 class="text-xl font-semibold mb-3">Global Reach</h3>
+                <p class="text-gray-700">Reach a worldwide audience of researchers and academics.</p>
+            </div>
+            <!-- Point 2 -->
+            <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                <h3 class="text-xl font-semibold mb-3">Diverse Categories</h3>
+                <p class="text-gray-700">Cover a wide range of research fields and topics.</p>
+            </div>
+            <!-- Point 3 -->
+            <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                <h3 class="text-xl font-semibold mb-3">Peer Review</h3>
+                <p class="text-gray-700">Ensure the quality and credibility of published papers.</p>
+            </div>
+            <!-- Point 4 -->
+            <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                <h3 class="text-xl font-semibold mb-3">Rapid Publication</h3>
+                <p class="text-gray-700">Experience swift review processes and publication timelines.</p>
+            </div>
+            <!-- Point 5 -->
+            <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                <h3 class="text-xl font-semibold mb-3">Interactive Platform</h3>
+                <p class="text-gray-700">Engage in discussions, forums, and collaborative research initiatives.</p>
+            </div>
+            <!-- Point 6 -->
+            <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                <h3 class="text-xl font-semibold mb-3">Innovative Analytics</h3>
+                <p class="text-gray-700">Access advanced analytics to track paper impact and citations.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- our team members -->
+<section class="text-white bg-gradient-to-b from-purple-600 to-green-400 px-4 py-16">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-6">Meet Our Team</h2>
+        <div class="team-slider">
+            <!-- Team Member 1 -->
+            <div class="px-8 team-member">
+                <img src="namrata.jpg" alt="Team Member 1">
+                <h3 class="text-lg font-semibold mt-4">Namrata Pal</h3>
+                <p class="text-gray-600">Project Manager, Back-end Developer, Data Analyst</p>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="px-8 team-member">
+                <img src="apurva.jpg" alt="Team Member 2">
+                <h3 class="text-lg font-semibold mt-4">Apurva Kumar</h3>
+                <p class="text-gray-600">Quality Assurance Tester, Content Strategist</p>
+            </div>
+            <!-- Team Member 1 -->
+            <div class="px-8 team-member">
+                <img src="subhadip.jpg" alt="Team Member 3">
+                <h3 class="text-lg font-semibold mt-4">Subhadip Saha</h3>
+                <p class="text-gray-600">Lead Developer, Content & Copywriter</p>
+            </div>
+            <!-- Team Member 1 -->
+            <div class="px-8 team-member">
+                <img src="subinoy.jpg" alt="Team Member 4">
+                <h3 class="text-lg font-semibold mt-4">Subinay Biswas</h3>
+                <p class="text-gray-600">SEO Specialist, Front-end Developer</p>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="px-8 team-member">
+                <img src="sahin.jpg" alt="Team Member 5">
+                <h3 class="text-lg font-semibold mt-4">Sahin</h3>
+                <p class="text-gray-600">Content Creator, UX/UI Designer</p>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="px-8 team-member">
+                <img src="priyansh1.jpg" alt="Team Member 5">
+                <h3 class="text-lg font-semibold mt-4">Priyansh Sharma</h3>
+                <p class="text-gray-600">Lead Developer, Copywriter</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="text-white ">
+        <!-- bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ... body-font -->
+        <div class="container px-4 py-6 mx-auto flex items-center sm:flex-row flex-col">
+            <div>
+                <img src="logoDN.png" height="60" width="60">
+            </div>
+            <a class="flex title-font font-medium items-center text-gray-700 mb-4 md:mb-0">
+                <span class="ml-3 text-x1 sm:text-2xl">MedCare Research Hub</span>
+            </a>
+            <a class="flex title-font font-medium items-center text-gray-500 mb-4 md:mb-0">
+                <span class="ml-3 text-x1 sm:text-1xl">[Connecting Health, Transforming Lives]</span>
+            </a>
+        </div>
+        <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center py-6">
+        </div>
+        </div>
+        <div class="bg-gray-200">
+            <div class="container mx-auto py-4 px-2 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-gray-600 font-bold text-sm text-center sm:text-left">© 2023 mcrpcodesquad.com — All
+                    rights
+                    reserved
+                    <!-- <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@knyttneve</a> -->
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                    <a class="text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor"
+                            style="color: #1877f2" viewBox="0 0 24 24">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor"
+                            style="color: #128c7e" viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor"
+                            style="color: #c13584" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor"
+                            style="color: #0077b5" viewBox="0 0 24 24">
+                            <path
+                                d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

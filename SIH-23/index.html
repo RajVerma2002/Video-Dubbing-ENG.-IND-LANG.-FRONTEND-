@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndeationX</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <style>
+        /* Floating WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #089284;
+            color: #fff;
+            padding: 12px 12px;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #052b27;
+            transform: scale(1.1);
+        }
+
+        /* our team style */
+        .team-slider {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .team-member {
+            width: 150px;
+            padding: 0 15px;
+            transition: transform 0.3s, z-index 0.3s, width 0.3s;
+        }
+
+        .team-member-inner {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .team-slider:hover .team-member {
+            transform: scale(0.8);
+            z-index: 0;
+            width: 110px;
+        }
+
+        .team-slider:hover .team-member-inner {
+            transform: scale(1.1);
+        }
+
+        .team-slider .slick-center {
+            z-index: 1;
+        }
+
+        /* Slick Carousel Default Styles */
+        .slick-slider {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .slick-list {
+            margin: 0 -15px;
+        }
+
+        .slick-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+
+<!-- <body class="bg-fixed bg-[url-of-your-image] bg-cover bg-center"> -->
+
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://api.whatsapp.com/send?phone=916290089605" target="_blank" class="whatsapp-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" style="color: #05f8db"
+            viewBox="0 0 24 24">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+    </a>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        // Initialize Slick Carousel
+        // Initialize Slick Carousel
+        $(document).ready(function () {
+            $('.team-slider').slick({
+                slidesToShow: 3,
+                centerMode: true, // Enables center mode
+                centerPadding: '0',
+                focusOnSelect: true,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+
+    </script>
+
+
+
+
+    <!-- Home -->
+    <div id="home" class="flex justify-center bg-blue-700">
+        <nav class="self-center w-full max-w-7xl ">
+            <div class="flex flex-col lg:flex-row justify-around items-center text-white">
+                <div class="pl-5 py-8 text-lg font-sans md:text-3xl font-bold">IndeationX
+                </div>
+                <ul class="hidden lg:flex items-center text-[18px] font-semibold pl-32">
+                    <li class="hover:underline underline-offset-4 decoration-2 decoration-white py-2 rounded-lg px-3">
+                        <a href="#home">Home</a> </li>
+                    <li class="hover:underline underline-offset-4 decoration-2 decoration-white py-2 rounded-lg px-3"><a
+                            href="#">Contact</a></li>
+                    <li class="hover:underline underline-offset-4 decoration-2 decoration-white py-2 rounded-lg px-3"><a
+                            href="#services">Services</a></li>
+                    <li class="hover:underline underline-offset-4 decoration-2 decoration-white py-2 rounded-lg px-3"><a
+                            href="#">About</a></li>
+                    <li class="hover:underline underline-offset-4 decoration-2 decoration-white py-2 rounded-lg px-3"><a
+                            href="ipr.html">IPR</a></li>
+                </ul>
+                <div class="text-white text-center text-base pr-5 inline-flex">
+                    <a href="#" class="w-8 h-8 inline-block rounded-full pt-[6px] hover:text-blue-500"><i
+                            class="fa fa-twitter"></i></a>
+                    <a href="#" class="w-8 h-8 inline-block rounded-full pt-[5px] hover:text-blue-500"><i
+                            class="fa fa-instagram"></i></a>
+                    <a href="#" class="w-8 h-8 inline-block rounded-full pt-[5px] hover:text-blue-500"><i
+                            class="fa fa-facebook"></i></a>
+                    <a href="#" class="w-8 h-8 inline-block rounded-full pt-[5px] hover:text-blue-500"><i
+                            class="fa fa-google"></i></a>
+                    <a href="#" class="w-8 h-8 inline-block rounded-full pt-[5px] hover:text-blue-500"><i
+                            class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="flex justify-center bg-gradient-to-b from-blue-700 to-white px-8 py-20 ">
+        <div class="flex flex-col justify-center">
+            <div class="flex flex-col lg:flex-row max-w-7xl justify-center items-center p-2 space-y-3 w-full">
+                <div class="flex flex-col text-black md:items-start items-center justify-between space-y-3 px-8">
+                    <!-- <div class="text-5xl md:text-7xl font-bold "> Hero Animation 
+                    </div>  -->
+                    <div class="text-lg md:text-6xl font-bold ">Your Gateway to Endless Possibilities!
+                    </div>
+                    <div class="text-lg md:text-2xl">Unlocking Multilingual Expression: Your Stories, Our Voices.
+                    </div>
+                    <div class="text-xl py-5 md:text-1xl ">@indeationx.com</div>
+                    <a href="application.html"
+                        class="bg-white px-6 py-3 rounded-full bg-blue-900 hover:bg-blue-400 transition duration-300">Get
+                        Started
+                    </a>
+                </div>
+                <div class="flex space-x-2 md:space-x-6 md:m-4">
+                    <!-- <div class="md:w-25 w-25 h-60 md:h-96 overflow-hidden rounded-xl">
+                        <img src="3 crp.png" class="h-full w-full" alt="">
+                    </div>
+                    <div class="md:w-40 w-40 h-60 md:h-96 overflow-hidden rounded-xl">
+                        <img src="hero_1 crp.png" class="h-full w-full" alt="">
+                    </div>
+                    <div class="md:w-25 w-25 h-60 md:h-96 overflow-hidden rounded-xl">
+                        <img src="1 crp.png" class="h-full w-full" alt="">
+                    </div> -->
+                    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                      <img class="object-cover rounded-xl border-radius:0.90rem object-center rounded" alt="hero" src="a.jpg">
+                    </div>
+                    <!-- <div class="md:w-20 w-10 h-60 md:h-96 overflow-hidden rounded-xl"> 
+                        <img src="https://source.unsplash.com/50x400/?languages" class="h-full w-full" alt=""> 
+                    </div>  -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script src="https://use.fontawesome.com/03f8a0ebd4.js">
+    </script>
+
+
+
+
+<!-- Services Sliders -->
+<section id="services" class="text-white bg-gradient-to-b from-white to-green-400 px-4 py-16">
+    <div class="container mx-auto">
+        <h2 class="text-5xl font-bold text-black text-center mb-6">Our Services</h2>
+
+        <!-- 1st Slider -->
+        <div class="py-3 team-slider">
+            <!-- Team Member 1 -->
+            <div class="px-8 team-member">
+                <img src="Services/1.png" alt="Service_1">
+                <h3 class="text-lg text-black font-semibold mt-4">Access a pool of talented voice actors and linguists for high-quality dubbing</h3>
+                <!-- <p class="text-gray-600">Expert translation of scripts to ensure accurate voiceovers.</p> -->
+            </div>
+            <!-- Team Member 2 -->
+            <div class="px-8 team-member">
+                <img src="Services/2.png" alt="Service_2">
+                <h3 class="text-lg text-black font-semibold mt-4">Dub content into multiple languages, reaching a global audience.</h3>
+                <!-- <p class="text-gray-600">Quick delivery of dubbed content to meet tight deadlines.</p> -->
+            </div>
+            <!-- Team Member 1 -->
+            <div class="px-8 team-member">
+                <img src="Services/3.png" alt="Service_3">
+                <h3 class="text-lg text-black font-semibold mt-4">Expert translation of scripts to ensure accurate voiceovers.</h3>
+                <!-- <p class="text-gray-600">Access a pool of talented voice actors and linguists for high-quality dubbing.</p> -->
+            </div>
+            <!-- Team Member 1 -->
+            <div class="px-8 team-member">
+                <img src="Services/4.png" alt="Service_4">
+                <h3 class="text-lg text-black font-semibold mt-4">Choose from a diverse range of voices to match your content.</h3>
+                <!-- <p class="text-gray-600">Add subtitles alongside dubbed audio for enhanced accessibility.</p> -->
+            </div>
+            <!-- Team Member 2 -->
+            <div class="px-8 team-member">
+                <img src="Services/5.png" alt="Service_5">
+                <h3 class="text-lg text-black font-semibold mt-4">Add subtitles alongside dubbed audio for enhanced accessibility.</h3>
+                <!-- <p class="text-gray-600">Choose from a diverse range of voices to match your content.</p> -->
+            </div>
+            <!-- Team Member 2 -->
+            <div class="px-8 team-member">
+                <img src="Services/6.png" alt="Service_6">
+                <h3 class="text-lg text-black font-semibold mt-4">Review and fine-tune dubbing choices in real-time.</h3>
+                <!-- <p class="text-gray-600">Efficiently dub large volumes of content, such as TV series or films.</p> -->
+            </div>
+        </div>
+
+
+        <!-- 2nd Slider -->
+        <div class="py-3 team-slider">
+            <!-- Team Member 1 -->
+            <div class="px-8 team-member">
+                <img src="Services/7.png" alt="Service_7">
+                <h3 class="text-lg font-semibold mt-4">Dedicated assistance for a smooth and hassle-free experience.</h3>
+                <!-- <p class="text-gray-600">Project Manager, Back-end Developer, Data Analyst</p> -->
+            </div>
+            <!-- Team Member 2 -->
+            <div class="px-8 team-member">
+                <img src="Services/8.png" alt="Service_8">
+                <h3 class="text-lg font-semibold mt-4">Rigorous quality checks to maintain dubbing excellence.</h3>
+                <!-- <p class="text-gray-600">Quality Assurance Tester, Content Strategist</p> -->
+            </div>
+            <!-- Team Member 1 -->
+            <div class="px-8 team-member">
+                <img src="Services/9.png" alt="Service_9">
+                <h3 class="text-lg font-semibold mt-4">Tailor dubbing services to match the tone and style of your content.</h3>
+                <!-- <p class="text-gray-600">Lead Developer, Content & Copywriter</p> -->
+            </div>
+            <!-- Team Member 1 -->
+            <div class="px-8 team-member">
+                <img src="Services/10.png" alt="Service_10">
+                <h3 class="text-lg font-semibold mt-4">Protect sensitive content and ensure data privacy.</h3>
+                <!-- <p class="text-gray-600">SEO Specialist, Front-end Developer</p> -->
+            </div>
+            <!-- Team Member 2 -->
+            <div class="px-8 team-member">
+                <img src="Services/11.png" alt="Service_11">
+                <h3 class="text-lg font-semibold mt-4">Dedicated assistance for a smooth and hassle-free experience.</h3>
+                <!-- <p class="text-gray-600">Content Creator, UX/UI Designer</p> -->
+            </div>
+            <!-- Team Member 2 -->
+            <div class="px-8 team-member">
+                <img src="Services/12.png" alt="Service_12">
+                <h3 class="text-lg font-semibold mt-4">Quick delivery of dubbed content to meet tight deadlines.</h3>
+                <!-- <p class="text-gray-600">Lead Developer, Copywriter</p> -->
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+    <!-- Why Choose -->
+    <section class="bg-gradient-to-b from-green-400 to-yellow-500 px-7 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900">Why Choose Our Platform?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Point 1 -->
+                <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">Quality Dubbing</h3>
+                    <p class="text-gray-700">Professional-grade dubbing with clear audio and accurate lip-sync.</p>
+                </div>
+                <!-- Point 2 -->
+                <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">Language Variety</h3>
+                    <p class="text-gray-700">Access to a wide range of languages for global reach.</p>
+                </div>
+                <!-- Point 3 -->
+                <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">User-Friendly</h3>
+                    <p class="text-gray-700">Easy-to-navigate platform, suitable for all users.</p>
+                </div>
+                <!-- Point 4 -->
+                <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">Quick Turnaround</h3>
+                    <p class="text-gray-1000">Fast delivery for projects of any size.</p>
+                </div>
+                <!-- Point 5 -->
+                <!-- <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">Affordable</h3>
+                    <p class="text-gray-1000">Competitive pricing for professional dubbing services.</p>
+                </div> -->
+                <!-- Point 6 -->
+                <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">Customization Options</h3>
+                    <p class="text-gray-1000">Tailor dubbing services to your specific project needs.</p>
+                </div>
+                <!-- Point 7 -->
+                <div class="p-6 border border-blue-400 rounded-lg shadow-lg transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-3">Responsive Support</h3>
+                    <p class="text-gray-1000">Dedicated customer support for a seamless experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments -->
+    <div class="bg-gradient-to-b from-yellow-500 to-white flex justify-center  p-4">
+        <div class="flex flex-col justify-center items-center ">
+            <div class=" text-2xl md:text-5xl font-medium flex my-6">
+                <div>Testimonials By </div>
+                <div class="text-cyan-600 mx-1"> Trusted</div>
+            </div>
+            <div class="flex flex-col md:flex-row max-w-7xl justify-center items-center ">
+    
+                <div class="overflow-hidden w-full m-4 flex justify-center   md:w-[33%]  shadow-xl bg-cyan-400">
+    
+                    <div class="flex flex-col md:flex-row items-center justify-center  bg-white rounded-tl-full ">
+                        <div class="  items-center justify-center flex py-2">
+                            <div class="flex flex-col  items-center justify-center ">
+                                <div class="flex items-center">
+                                    <div class="p-1 bg-white rounded-full">
+    
+                                        <img src="Commentors/DM.png" alt=""
+                                            class="h20 w-20 rounded-full" />
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-stone-500 mx-4">Debasree Mitra</div>
+                                        <div class="text-sm font-medium text-stone-500 hover:text-stone-500 mx-4"><a
+                                                href="#">Asst. Prof. JISCE</a></div>
+                                    </div>
+                                </div>
+                                <div class="text-stone-400  m-2 px-8"> The real-time preview feature is a game-changer. 
+                                    It allows me to fine-tune the dubbing until it's perfect. 
+                                    Plus, the user-friendly interface makes the whole process enjoyable.</div>
+    
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="overflow-hidden w-full m-4 flex justify-center   md:w-[33%]  shadow-xl bg-cyan-400">
+    
+                    <div class="flex flex-col md:flex-row items-center justify-center  bg-white rounded-tl-full ">
+                        <div class="  items-center justify-center flex py-2">
+                            <div class="flex flex-col  items-center justify-center ">
+                                <div class="flex items-center">
+                                    <div class="p-1 bg-white rounded-full">
+    
+                                        <img src="Commentors/BN.jpg" alt="" class="h20 w-20 rounded-full" />
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-stone-500 mx-4">Biswarup Neogi</div>
+                                        <div class="text-sm font-medium text-stone-500 hover:text-stone-500 mx-4"><a
+                                                href="#">DEAN, JISCE</a></div>
+                                    </div>
+                                </div>
+                                <div class="text-stone-400  m-2 px-8">  I needed to localize my videos for a wider audience, 
+                                    and this platform made it a breeze. 
+                                    The quality of dubbing and the range of languages available are impressive. </div>
+    
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="overflow-hidden w-full m-4 flex justify-center   md:w-[33%]  shadow-xl bg-cyan-400">
+    
+                    <div class="flex flex-col md:flex-row items-center justify-center  bg-white rounded-tl-full ">
+                        <div class="  items-center justify-center flex py-2">
+                            <div class="flex flex-col  items-center justify-center ">
+                                <div class="flex items-center">
+                                    <div class="p-1 bg-white rounded-full">
+    
+                                        <img src="Commentors/CSR.jpg" alt="" class="h20 w-20 rounded-full" />
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-stone-500 mx-4">Chandrima Sinha Roy</div>
+                                        <div class="text-sm font-medium text-stone-500 hover:text-stone-500 mx-4"><a
+                                                href="#">Asst. Prof. JISCE</a></div>
+                                    </div>
+                                </div>
+                                <div class="text-stone-400  m-2 px-8"> Fast service and excellent customer support. 
+                                    Got my videos dubbed on time, and the results were outstanding. 
+                                    This platform has made video localization a stress-free process.</div>
+    
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Out Team -->
+    <div class="flex items-center justify-center text-center bg-gradient-to-r from-fuchsia-500 via-red-600 to-cyan-400 w-[100%]">
+        <div class="flex flex-col items-center justify-center rounded-tr-full rounded-bl-full w-full bg-white">
+          <div class="flex flex-col p-8 m-2 w-full">
+            <div class="justify-center text-2xl md:text-5xl font-medium flex my-6">
+                <div>Meet Our </div>
+                <div class="text-cyan-600 mx-1">  Team</div>
+            </div>
+  
+            <div
+              class="flex items-center justify-center md:flex-row flex-col space-x-4 space-y-4 p-2"
+            >
+              <div
+                class="flex-col px-2 py-2 shadow-xl rounded-2xl hover:scale-105 w-[90%] md:w-1/4"
+              >
+                <div
+                  class="h-40 w-40 border-2 border-cyan-500 rounded-full overflow-hidden bg-gray-200"
+                >
+                  <img
+                    src=""
+                    alt=""
+                    class=""
+                  />
+                </div>
+  
+                <div
+                  class="text-lg font-medium text-stone-600 cursor-pointer hover:text-stone-400"
+                >
+                  Harsh Kumar Shaw
+                </div>
+                <div class="italic text-gray-900 text-sm">Team Leader</div>
+                <div class="flex my-2">
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-900 border text-gray-900 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-twitter"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-900 border text-gray-900 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-instagram"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-900 border text-gray-900 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-facebook"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-900 border text-gray-900 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+              <div
+                class="flex-col px-2 py-2 shadow-xl rounded-2xl hover:scale-105 w-[90%] md:w-1/4"
+              >
+                <div
+                  class="h-40 w-40 border-2 border-cyan-500 rounded-full overflow-hidden bg-gray-200"
+                >
+                  <img
+                    src=""
+                    alt=""
+                    class=""
+                  />
+                </div>
+  
+                <div
+                  class="text-lg font-medium text-stone-600 cursor-pointer hover:text-stone-400"
+                >
+                  Uddipan Chakraborty
+                </div>
+                <div class="italic text-gray-500 text-sm">Project Manager</div>
+                <div class="flex my-2">
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-twitter"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-instagram"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-facebook"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+              class="flex-col px-2 py-2 shadow-xl rounded-2xl hover:scale-105 w-[90%] md:w-1/4"
+            >
+              <div
+                class="h-40 w-40 border-2 border-cyan-500 rounded-full overflow-hidden bg-gray-200"
+              >
+                <img
+                  src=""
+                  alt=""
+                  class=""
+                />
+              </div>
+
+              <div
+                class="text-lg font-medium text-stone-600 cursor-pointer hover:text-stone-400"
+              >
+                Niladri Mondal
+              </div>
+              <div class="italic text-gray-500 text-sm">App Developer</div>
+              <div class="flex my-2">
+                <a
+                  href="#"
+                  class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                  ><i class="fa fa-twitter"></i
+                ></a>
+                <a
+                  href="#"
+                  class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+                <a
+                  href="#"
+                  class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+                <a
+                  href="#"
+                  class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+
+            <div
+            class="flex-col px-2 py-2 shadow-xl rounded-2xl hover:scale-105 w-[90%] md:w-1/4"
+          >
+            <div
+              class="h-40 w-40 border-2 border-cyan-500 rounded-full overflow-hidden bg-gray-200"
+            >
+              <img
+                src=""
+                alt=""
+                class=""
+              />
+            </div>
+
+            <div
+              class="text-lg font-medium text-stone-600 cursor-pointer hover:text-stone-400"
+            >
+              Namrata Pal
+            </div>
+            <div class="italic text-gray-500 text-sm">Web Developer</div>
+            <div class="flex my-2">
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+
+              <div
+                class="flex-col px-2 py-2 shadow-xl rounded-2xl hover:scale-105 w-[90%] md:w-1/4"
+              >
+                <div
+                  class="h-40 w-40 border-2 border-cyan-500 rounded-full overflow-hidden bg-gray-200"
+                >
+                  <img
+                    src="Teammates/Raj png.jpg"
+                    alt=""
+                    class=""
+                  />
+                </div>
+  
+                <div
+                  class="text-lg font-medium text-stone-600 cursor-pointer hover:text-stone-400"
+                >
+                  Raj Verma
+                </div>
+                <div class="italic text-gray-500 text-sm">Front-end Developer</div>
+                <div class="flex my-2">
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-twitter"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-instagram"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-facebook"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+              <div
+                class="flex-col px-2 py-2 shadow-xl rounded-2xl hover:scale-105 w-[90%] md:w-1/4"
+              >
+                <div
+                  class="h-40 w-40 border-2 border-cyan-500 rounded-full overflow-hidden bg-gray-200"
+                >
+                  <img
+                    src=""
+                    alt=""
+                    class=""
+                  />
+                </div>
+  
+                <div
+                  class="text-lg font-medium text-stone-600 cursor-pointer hover:text-stone-400"
+                >
+                  Apurva Kumar
+                </div>
+                <div class="italic text-gray-500 text-sm">Graphics Designer</div>
+                <div class="flex my-2">
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-twitter"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-instagram"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-facebook"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="w-9 h-9 rounded-full border-cyan-500 border text-stone-500 hover:bg-cyan-500 hover:text-white mx-1 pt-1 inline-block"
+                    ><i class="fa fa-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://use.fontawesome.com/03f8a0ebd4.js"></script>
+      <script
+        type="module"
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      ></script>
+      <script
+        nomodule
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      ></script> 
+
+
+
+<!-- Footer -->
+<footer class="text-white ">
+    <!-- bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ... body-font -->
+    <div class="container px-4 py-6 mx-auto flex items-center sm:flex-row flex-col">
+        <!-- <div>
+            <img src="logoDN.png" height="60" width="60">
+        </div> -->
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <span class="ml-3 font-bold text-x1 sm:text-2xl">IndeationX</span>
+        </a>
+        <a class="flex title-font font-medium items-center text-gray-500 mb-4 md:mb-0">
+            <span class="ml-3 text-x1 sm:text-1xl">[Unlocking Multilingual Expression: Your Stories, Our Voices.]</span>
+        </a>
+    </div>
+    <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center py-6">
+    </div>
+    </div>
+    <div class="bg-gray-200">
+        <div class="container mx-auto py-4 px-2 flex flex-wrap flex-col sm:flex-row">
+            <p class="text-gray-600 font-bold text-sm text-center sm:text-left">© 2023 indeationx.com — All
+                rights
+                reserved
+                <!-- <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@knyttneve</a> -->
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                <a class="text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor"
+                        style="color: #1877f2" viewBox="0 0 24 24">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor"
+                        style="color: #128c7e" viewBox="0 0 24 24">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor"
+                        style="color: #c13584" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor"
+                        style="color: #0077b5" viewBox="0 0 24 24">
+                        <path
+                            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                    </svg>
+                </a>
+            </span>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+
+</html>

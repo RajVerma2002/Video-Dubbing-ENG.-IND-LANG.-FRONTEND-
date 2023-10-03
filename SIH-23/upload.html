@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndeationX - IPR FAQs</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .primary-bg {
+            background: linear-gradient(to bottom, #1f1264, #131c2c);
+        }
+
+        .primary-text {
+            color: #e2e8f0;
+        }
+
+        .secondary-bg {
+            background: linear-gradient(to bottom, #1f365e, #274378);
+        }
+
+        .secondary-text {
+            color: #cbd5e0;
+        }
+
+        .accent-bg {
+            background: linear-gradient(to bottom, #00b4d8, #0077b6);
+        }
+
+        .accent-text {
+            color: #ffffff;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #089284;
+            color: #fff;
+            padding: 12px 12px;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #052b27;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+
+<body class="bg-gradient-to-r from-blue-700 from-10% via-sky-500 via-30% to-emerald-500 to-white">
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://api.whatsapp.com/send?phone=918348923579" target="_blank" class="whatsapp-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" style="color: #05f8db"
+            viewBox="0 0 24 24">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+    </a>
+
+    <!-- Navigation -->
+    <header class="text-gray-100 bg-gradient-to-r from-blue-700 from-10% via-sky-500 via-30% to-emerald-500 to-white body-font w-full ">
+        <div class="container mx-auto flex flex-wrap px-2 py-4 flex-col md:flex-row items-center">
+        
+            <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                <span class="font-bold ml-3 text-x1 sm:text-3xl" style="color:#ffffff ;">IdeationX</span>
+            </a>
+            <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+                <!-- Search Bar -->
+                <!-- <div class="relative mr-4">
+                    <input type="text" placeholder="Search IPR"
+                        class=" text-gray-700 bg-white rounded-full px-4 py-2 pl-10 w-64 focus:outline-none focus:ring-2 focus:ring-base-bg focus:ring-opacity-50">
+                    <div class="absolute top-0 left-0 flex items-center h-full ml-3">
+                        <svg class="h-5 w-5 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M22 22L15.5 15.5M12 6a6 6 0 100 12 6 6 0 000-12z"></path>
+                        </svg>
+                    </div>
+                </div> -->
+
+                <a href="index.html" class="text-gray-700 font-semibold mr-5 hover:text-2xl">Home
+                </a>
+
+                <a href="Contact.html" class="text-gray-700 font-semibold mr-5 hover:text-2xl">Contact
+                </a>
+
+                <a href="Services.html" class="text-gray-700 font-semibold mr-5 hover:text-2xl">Services
+                </a>
+
+                <a href="About.html">
+                    <button class="text-gray-700 font-semibold mr-5 hover:text-2xl">About 
+                    </button>
+                </a>
+            </nav>
+        </div>
+    </header>
+    <div class="max-w-lg mx-auto bg-gradient-to-r from-blue-300 from-10% via-sky-200 via-30% to-emerald-100 to-white p-8 rounded shadow-md">
+        <h1 class="text-2xl font-semibold mb-4">Upload Your Video</h1>
+
+        <!-- Language Selection Dropdown -->
+        <label for="language" class="block font-medium text-gray-700">Select Language:</label>
+        <select id="language" name="language" class="w-full border border-gray-300 rounded-md py-2 px-3 mt-2 focus:outline-none focus:ring focus:ring-blue-200" required>
+            <option value="" disabled selected>Select Language</option>
+            <option value="hindi">Hindi</option>
+            <option value="bengali">Bengali</option>
+            <option value="marathi">Marathi</option>
+            <!-- Add more language options as needed -->
+        </select>
+
+        <!-- Video Upload Input -->
+        <label for="video" class="block font-medium text-gray-700 mt-4">Upload Video (MP4 only):</label>
+        <input type="file" id="video" name="video" accept=".mp4" class="w-full border border-gray-300 rounded-md py-2 px-3 mt-2 focus:outline-none focus:ring focus:ring-blue-200" required>
+
+        <!-- Submit Button -->
+        <button type="submit" class="bg-blue-500 text-white font-semibold rounded-md mt-4 py-2 px-4 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200">Upload and Dub</button>
+    </div>
+
+
+    <div class="max-w-lg mx-auto bg-gradient-to-r from-blue-300 from-10% via-sky-200 via-30% to-emerald-100 to-white p-8 rounded shadow-md">
+        <!-- Existing code for the video upload section -->
+
+<!-- Dubbed Video Section -->
+<div class="mt-8">
+    <h2 class="text-2xl font-semibold mb-4">Your Dubbed Videos</h2>
+
+    <!-- List of Dubbed Videos -->
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Example video card (replace with dynamic content) -->
+        <li class="bg-white rounded shadow-md overflow-hidden">
+            <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">Dubbed Video 1</h3>
+                <p class="text-gray-600">Language: Hindi</p>
+                <!-- Add more video details here -->
+                <div class="mt-4">
+                    <a href="#" class="text-blue-500 hover:underline">Download</a>
+                </div>
+            </div>
+        </li>
+
+        <!-- Add more video cards as needed -->
+    </ul>
+</div>
+
+    </div>
+
+
+    
+</body>
+</html>
